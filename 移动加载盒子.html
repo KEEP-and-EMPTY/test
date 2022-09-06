@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>移动盒子</title>
+    <style>
+        * {
+            margin:0;padding:0;
+        }
+        body {
+            background-color: #000;
+        }
+        .container {
+            position:relative;
+            width: 450px;
+            height: 450px;
+            margin:200px auto;
+            /* background-color: #fff; */
+        }
+        .one,.two,.three {
+            width: 200px;
+            height: 200px;
+        }
+        .one{
+            position:absolute;
+            top:0;
+            left: 0;
+            background-color: #ff7801;
+            animation: One 2s ease-in infinite;
+            box-shadow: 0px 0px 40px #ff7801;
+        }
+        .two {
+            position:absolute;
+            top:0;
+            right:0;
+            background-color: #00aa00;
+            animation: Two 2s ease-in infinite;
+            box-shadow: 0px 0px 40px #00aa00;
+        }
+        .three {
+            position:absolute;
+            bottom:0;
+            right:0;
+            background-color: #2097ff;
+            box-shadow: 0 0 40px #2097ff;
+            animation: Three 2s ease-in infinite;
+        }
+        @keyframes One {
+            0% {
+                transform:translate(0,0);
+            }
+            25% {
+                transform:translate(250px,0);
+            }
+            50% {
+                transform:translate(250px,250px);
+            }
+            75% {
+                transform:translate(0,250px);
+            }
+            100% {
+                transform:translate(0,0);
+            }
+        }
+        @keyframes Two {
+            0% {
+                transform:translate(0,0);
+            }
+            25% {
+                transform:translate(0,250px);
+            }
+            50% {
+                transform:translate(-250px,250px);
+            }
+            75% {
+                transform:translate(-250px,0);
+            }
+            100% {
+                transform:translate(0,0);
+            }
+        }
+        @keyframes Three {
+            0% {
+                transform:translate(0,0);
+            }
+            25% {
+                transform:translate(-250px,0);
+            }
+            50% {
+                transform:translate(-250px,-250px);
+            }
+            75% {
+                transform:translate(0,-250px);
+            }
+            100% {
+                transform:translate(0,0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter属性改变图片灰度</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image: url(images/back.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 500px;
+            height: 500px;
+            transform: translate(-50%, -50%);
+        }
+
+        img {
+            width: 500px;
+        }
+
+        .colorful,
+        .gray {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .colorful {
+            width: 0px;
+            height: 100%;
+            border-right: 1px solid #000;
+            transition: all 2s;
+            overflow: hidden;
+        }
+
+        .gray {
+            width: 100%;
+            filter: grayscale(100%);
+        }
+
+        .container:hover .colorful {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="gray">
+            <img src="images/cup.png" alt="">
+        </div>
+        <div class="colorful">
+            <img src="images/cup.png" alt="">
+        </div>
+    </div>
+</body>
+
+</html>

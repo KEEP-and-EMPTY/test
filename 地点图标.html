@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0; padding: 0;
+        }
+        body {
+            background-image: url(images/);
+        }
+        .circle {
+            position: relative;
+            height: 100px;
+            width: 100px;
+            background: linear-gradient(rgba(16, 58, 70), rgba(49, 217, 150));
+            margin: 400px auto;
+            border-radius: 0 50px 50px 50px;
+            transform: rotate(-135deg);
+            z-index: 999;
+        }
+
+        .sc {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #000;
+        }
+
+        .sd {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 0px;
+            width: 0px;
+            border-radius: 50%;
+            background-color: rgba(16, 58, 70);
+            animation: Shadow 1s linear infinite;
+
+        }
+
+        @keyframes Shadow {
+            0% {
+                box-shadow: 0px 0px 0px 0px #2bba87;
+                border-radius: 50%;
+                opacity: 1;
+                z-index: -1;
+            }
+
+            100% {
+                box-shadow: 0px 0px 50px 50px #2bba87;
+                border-radius: 50%;
+                opacity: 0;
+                z-index: -1;
+                /*不能实现掩盖原因是由于盒子本身没有大小是拓展出来的。
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="circle">
+        <div class="sc"></div>
+        <div class="sd"></div>
+    </div>
+</body>
+
+</html>
